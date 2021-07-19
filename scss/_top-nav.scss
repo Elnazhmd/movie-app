@@ -1,3 +1,4 @@
+@import "media-query";
 .nav{
     padding: 50px 50px 20px 50px;
     width: 100%;
@@ -30,6 +31,11 @@
           }
          }
 
+         input[type = submit]{
+            @include mq(s-tablet , max) {
+                display: none;
+            }
+        }
        
        
     img {
@@ -46,6 +52,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include mq(s-desktop , max) {
+            display: none;
+        }
     }
 
     &__username {

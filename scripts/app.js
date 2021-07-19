@@ -344,7 +344,7 @@ function generateRandomPicture(array){
 	headerImage.setAttribute("src", array[randomNum]);
   }
 
-  const heroEl = document.querySelector("#hero");
+  const headerBg = document.querySelector("#header");
 
   async function randomMovie() {
 	await fetch(
@@ -356,9 +356,9 @@ function generateRandomPicture(array){
 		let randomMovie = "";
 		movies = response.results.filter((el) => el.backdrop_path !== null);
 		randomMovie = movies[Math.floor(Math.random() * movies.length)];
-		heroEl.innerHTML = `
-		
-		<img src="https://image.tmdb.org/t/p/original${randomMovie.backdrop_path}">
+		headerBg.style.background = `linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/original${randomMovie.backdrop_path}') no-repeat center center`
+		headerBg.style.backgroundSize = "cover";
+		headerBg.innerHTML = `
 		<h1> Discover <br>Popular Movies </h1>
 		<h2> ${randomMovie.title} </h2>
 		<p>${randomMovie.overview}</p>

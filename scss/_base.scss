@@ -21,12 +21,16 @@ a {
     flex-direction: row;
 
     &__left {
-      width: 17%;
+      width: 15%;
+      height: 100vh;
       position: fixed;
+      display: flex;
+      justify-content: center;
+
     }
     &__right {
-      width: 87%;
-      margin-left: 17%;
+      width: 85%;
+      margin-left: 15%;
       
     }
   }
