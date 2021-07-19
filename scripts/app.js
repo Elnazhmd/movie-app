@@ -209,6 +209,7 @@ function showMovies(data) {
 }
 /* Open when someone clicks on the movie details element */
 const overlayContent = document.querySelector('#overlay-content');
+const overlay = document.querySelector(".overlay");
 
 function openNav(myId) {
 	overlayContent.innerHTML = '';
@@ -221,7 +222,7 @@ function openNav(myId) {
 			data.results.forEach((movie) => {
 			if(myId == movie.id) {
 				const {
-					title, poster_path, vote_average, overview, release_date
+					title, poster_path, vote_average, overview, release_date, backdrop_path
 				} = movie;
 				let movieDesc = document.createElement("div");
 				movieDesc.classList.add("movie-details");
@@ -247,7 +248,10 @@ function openNav(myId) {
                       </div>
                       
                 `
+				overlay.style.background = `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://image.tmdb.org/t/p/original${backdrop_path}") no-repeat center center`;
+				overlay.style.backgroundSize = "cover";
 				overlayContent.appendChild(movieDesc);
+
 				fetch(BASE_URL + '/movie/' + movie.id + '/videos?' + API_KEY).then(res => res.json()).then(videoData => {
 					if(videoData) {
 						if(videoData.results.length > 0) {
