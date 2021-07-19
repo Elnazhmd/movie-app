@@ -213,9 +213,11 @@ const overlayContent = document.querySelector('#overlay-content');
 function openNav(myId) {
 	overlayContent.innerHTML = '';
 	document.querySelector("#myNav").style.width = "100%";
+	console.log(API_URL)
 	fetch(API_URL+`&page=${pageNum}`).then(res => res.json()).then(data => {
 			
 			// console.log(data.results)
+
 			data.results.forEach((movie) => {
 			if(myId == movie.id) {
 				const {

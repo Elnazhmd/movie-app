@@ -21,8 +21,12 @@
     }
     span {
         font-size: 25px;
+        @include mq(s-desktop) {
+            display: none;
+        }
 
     }
+    
 }
 
 &__links {
