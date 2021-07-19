@@ -20,6 +20,8 @@
         padding-right: 10px;
         @include mq(s-desktop , max) {
             width: 40px;
+            display: flex;
+            justify-content: center;
         }      
     }
     span {
@@ -57,6 +59,12 @@
             &:hover {
                 color: red;
             }
+        }
+        img {
+            @include mq(s-desktop , max) {
+                width:25px;
+                margin-bottom: 20px;
+            }  
         }
     }
 }

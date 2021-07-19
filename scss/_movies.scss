@@ -230,6 +230,10 @@
 		width: 65%;
 		height: 100%;
 		padding: 0 70px 0 70px;
+		@include mq( "s-desktop" , max) {
+			padding: 0;
+		}
+
 		color: #fff;
 		h1 {
 			font-size: 40px;

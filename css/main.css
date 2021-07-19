@@ -276,6 +276,9 @@ a {
     height: 100%;
     padding: 0 70px 0 70px;
     color: #fff; }
+    @media only screen and (max-width: 991px) {
+      .movie-details__right {
+        padding: 0; } }
     .movie-details__right h1 {
       font-size: 40px;
       margin-bottom: 10px; }
@@ -331,7 +334,9 @@ a {
       padding-right: 10px; }
       @media only screen and (max-width: 991px) {
         .side-nav__logo img {
-          width: 40px; } }
+          width: 40px;
+          display: flex;
+          justify-content: center; } }
     .side-nav__logo span {
       font-size: 25px; }
       @media only screen and (max-width: 991px) {
@@ -360,6 +365,10 @@ a {
             display: none; } }
         .side-nav__links .link__item:hover {
           color: red; }
+      @media only screen and (max-width: 991px) {
+        .side-nav__links .link img {
+          width: 25px;
+          margin-bottom: 20px; } }
   .side-nav__footer {
     flex-grow: 1;
     display: flex;
